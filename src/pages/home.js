@@ -21,35 +21,9 @@ export const Home = () => {
       });
   }, []);
 
-
-  // useEffect(() => {
-  //   fetch("/api", {
-  //       method: "POST",
-  //       body: JSON.stringify({ content: search }),
-  //       // headers: {
-  //       //   "Content-type": "application/json; charset=UTF-8",
-  //       // },
-  //     })
-  //     .then((res) => {
-  //       if (res.ok) {
-  //         return res.json();
-  //       }
-  //     })
-  //     .then((data) => {
-  //       setGames(data);
-  //       setSearch("");
-  //       console.log('hello');
-  //     });
-  // }, []);
-
   const handleSearchChange = (userInput) => {
     setSearch(userInput);
   };
-
-  // const handleSearchSubmit = () => {
-  //   console.log(search);
-  //   setFiller('searched');
-  // };
 
   const handleSearchSubmit = () => {
     fetch("/api/search", {
@@ -64,17 +38,17 @@ export const Home = () => {
       .then((info) => {
         console.log(info);
         setSearch("");
-        // getLatestGames();
+        getLatestGames();
       });
   };
 
-  // const getLatestGames = () => {
-  //   fetch("/api").then((res) => {
-  //     if (res.ok) {
-  //       return res.json()
-  //     }
-  //   }).then((data) => setGames(data));
-  // };
+  const getLatestGames = () => {
+    fetch("/api").then((res) => {
+      if (res.ok) {
+        return res.json()
+      }
+    }).then((data) => setGames(data));
+  };
 
   return (
     <div>

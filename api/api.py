@@ -72,8 +72,6 @@ def index():
             searched_for_games_contains + searched_for_games_equivalent))
         print(search_word)
 
-        # return jsonify(*map(info_serializer, Game.query.all()))
-
         return jsonify(*map(info_serializer, searched_for_games))
 
 
