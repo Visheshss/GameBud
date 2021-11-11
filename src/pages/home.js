@@ -38,16 +38,7 @@ export const Home = () => {
       .then((info) => {
         console.log(info);
         setSearch("");
-        getLatestGames();
       });
-  };
-
-  const getLatestGames = () => {
-    fetch("/api").then((res) => {
-      if (res.ok) {
-        return res.json()
-      }
-    }).then((data) => setGames(data));
   };
 
   return (

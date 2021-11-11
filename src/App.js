@@ -7,14 +7,24 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-// import 'bootstrap/dist/css/bootstrap.css';
+import {ShowGame} from './pages/showgame'
 
 
 function App() {
   return (
-    <div className="App">
-       <Home/>
-    </div>
+    // <div className="App">
+    //    <Home/>
+    // </div>
+    <Router>
+        <Switch>
+          <Route exact path='/home'>
+            <Home/>
+          </Route>
+          <Route path='/:id'>
+            <ShowGame/>
+          </Route>
+        </Switch>
+    </Router> 
   );
 }
 

@@ -11,11 +11,13 @@ export const SearchBar = ({ userInput, onSearchChange, onSearchSubmit }) => {
         onSearchSubmit();
     };
     return (
-        <form onSubmit={handleSubmit}>
-            <input onChange={handleChange} id='search' type='text' required value={userInput} placeholder='Search For Games!'/>
-            <br></br>
-            <br></br>
-            <input id='submit' type='submit'/>
-        </form>
+        <center>
+            <form onSubmit={handleSubmit}>
+                <input onChange={handleChange} id='search' type='text' required value={userInput} placeholder='Search For Games!'/>
+                <br></br>
+                <br></br>
+                <input id='submit' type='submit'/>
+            </form>
+        </center>
     );
 };
