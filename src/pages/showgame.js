@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         padding: theme.spacing(6),
         textAlign: 'center',
-        //color: theme.palette.text.primary,
         color: 'white',
         background: '#282c34',
     }
@@ -33,31 +32,24 @@ export const ShowGame = () => {
   }, [{id}]);
 
   return (
-    <React.Fragment>
+    <React.Fragment >
         <div>
             <NavBar/>
         </div>
-        <div>   
-            <div>
-                <Grid container spacing={2} className={classes.grid}>                       
-                    <Grid item md={4} key={game['title']} >
-                        <Paper id='box' className={classes.paper} style={{ position:'relative', display: "flex", justifyContent: "center", borderStyle:'solid', borderRadius:'10px', borderColor:'black', borderWidth:'medium',
-                                backgroundImage: `url(${game['image']})`, backgroundRepeat: 'no-repeat', backgroundSize:'100%', height:'150px', backgroundSize: 'cover', alignItems:'center'}} >
-                                <ul>
-                                    <div className='imgbox'>
-                                        {/* <img className='center-fit' src={game.image} style={{borderRadius:'10px', borderColor:'white', height:'100%', width:'100%'}}></img> */}
-                                    </div>
-                                    <br></br>
-                                    <div style={{backgroundColor:'black', position:'relative', bottom:'-105px', width:'200px', height:'40px', borderRadius:'10px', opacity:'0.7'}}></div>
-                                    <div style={{justifyContent:'space-between', display:'flex', position:'relative', bottom:'-80px', height:'100%'}}>
-                                        <b><li style={{fontSize:'20px', width:'200px', height:'40px',lineHeight:'40px', textAlign:'center' }}>{game['title']}</li></b>
-                                    </div>
-                                </ul>
-                        </Paper>
-                    </Grid>                             
-                </Grid>
-            </div>
-            <Link to='/home'>Back to search</Link>
+        <div style={{position: 'absolute', left:'50px', top:'130px', width:'600px'}}>   
+            <center>
+                <h1 class = 'white' style = {{position: 'relative', fontSize:'50px'}}>{game['title']}</h1>
+                <h4 class = 'white' style = {{position: 'relative', top: '5px'}}>{game['genre']} | {game['platform']}</h4>
+                <h2 class = 'white' style = {{position: 'relative', width: '400px', top:'50px'}}>{game['description']}</h2>
+                <a href = {game['download']} class='button button1' style = {{position: 'relative', top:'100px', width:'300px'}}>Download</a>
+            </center>
+        </div>
+        <div style = {{position:'absolute', right: '50px',
+                top: '130px'}}>
+            <center>
+                <img src = {game['image']} style = {{width: '600px', position:'relative', borderStyle:'solid', borderColor:'black', borderWidth:'thin'}}></img>
+                <h5 class = 'white' style = {{position: 'relative', top:'5px'}}>Developed by {game['developer']} | Published by {game['publisher']}</h5>
+            </center>
         </div>
     </React.Fragment>
     );

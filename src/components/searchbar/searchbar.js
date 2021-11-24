@@ -16,7 +16,7 @@ export const SearchBar = ({ userInput, onSearchChange, onSearchSubmit }) => {
                 <input onChange={handleChange} id='search' type='text' required value={userInput} placeholder='Search For Games!'/>
                 <br></br>
                 <br></br>
-                <input id='submit' type='submit'/>
+                <input style = {{ width:'250px', height:'55px'}} class = 'button button1' id='submit' type='submit'/>
             </form>
         </center>
     );

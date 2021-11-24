@@ -12,9 +12,6 @@ import {ShowGame} from './pages/showgame'
 
 function App() {
   return (
-    // <div className="App">
-    //    <Home/>
-    // </div>
     <Router>
         <Switch>
           <Route exact path='/home'>

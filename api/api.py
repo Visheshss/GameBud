@@ -47,23 +47,12 @@ display_games = 'display games'
 
 @app.route('/api', methods=['GET', 'POST'])
 def index():
-    # searched_title = json.loads(request.data)
-    # print(searched_title)
-    # if searched_title['content'] == "":
-    #     print('other success')
-    #     return jsonify(*map(info_serializer, Game.query.all()))
-    # else:
-    #     print('success')
-    #     return jsonify(*map(info_serializer, Game.query.filter_by(title=searched_title['content'])))
-
     if session.get(display_games, None) is None:
-        print('other success')
         print(jsonify(*map(info_serializer, Game.query.all())))
         return jsonify(*map(info_serializer, Game.query.all()))
     else:
         search_word = session[display_games]
         session.pop('display games', None)
-        print('success')
         searched_for_games_contains = Game.query.filter(
             Game.title.contains(search_word)).all()
         searched_for_games_equivalent = Game.query.filter(
