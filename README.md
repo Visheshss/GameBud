@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# **GameBud**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GameBud is a Flask-React web application that serves as a free-to-play game database. With hundreds of games, its a great way to find your next game on a budget.
+Games can be searched for by keyword, and you can view each game's information. Additionally, a link to download each game is provided. The site uses React.js on the frontend and Flask on the backend. 
 
-## Available Scripts
+### **Technologies Used:**
+- Python (Flask, sqlalchemy)
+- JavaScript (React.js)
+- HTML
+- CSS (Flexbox)
+- Free2Game API
 
-In the project directory, you can run:
+### **Walkthrough**
 
-### `yarn start`
+1. The home page allows you to browse for games
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Screen Shot 2021-12-10 at 5 49 31 PM](https://user-images.githubusercontent.com/52982928/145651028-a92477d5-4013-4b13-b184-47a4efd9be7a.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. Search for games via keyword (e.g. "War")
 
-### `yarn test`
+![Screen Shot 2021-12-10 at 5 53 48 PM](https://user-images.githubusercontent.com/52982928/145651296-eeb8d39e-a133-43a9-a8ae-ca82b9a46d0d.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. View a game information (e.g. platform)
 
-### `yarn build`
+![Screen Shot 2021-12-10 at 5 59 39 PM](https://user-images.githubusercontent.com/52982928/145651765-3483f63f-d9ff-4182-9eb3-1e747471f97a.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Use the download link
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Screen Shot 2021-12-10 at 6 00 07 PM](https://user-images.githubusercontent.com/52982928/145651796-5d9ea889-35fc-4627-9cf6-1ce3dc4591c4.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### **Usage**
+1. Ensure you have all the used technologies installed
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. Clone the repository locally
+```
+$ git clone https://github.com/Visheshss/GameBud.git
+```
+2. Navigate to GameBud
+```
+$ cd GameBud
+```
+3. Install the required dependencies
+```
+$ npm install
+```
+4. Navigate to the Flask application 
+```
+$ cd api
+```
+5. Set the Flask App 
+```
+$ export FLASK_APP=api.py
+```
+6. Start the Flask backend
+```
+$ flask run 
+```
+7. Open another command line and navigate to the main directory
+```
+$ cd GameBud
+```
+8. Launch the React frontend
+```
+$ npm start
+```
