@@ -53,26 +53,9 @@ def index():
                     release=i['release_date'], image=i['thumbnail'], download=i['game_url'])
         db.session.add(game)
         db.session.commit()
-
-    # n = 0
-    # array = {}
-    # for i in range(10):
-    #     game = (requests.get('https://www.freetogame.com/api/game?id=' + str(i+1))).json()
-    #     if jsonify(game['status']) == 0:
-    #         return 'no'
-    #     else:
-    #         description = jsonify(game["status"])
-    #         array[i] = [description]
-        # response[n].update( {"description":description} )
-        # response[n].update( {"requirements":jsonify(game["minimum_system_requirements"])} )
-        # n += 1
-
-    # return jsonify(response)
-
+        
     return jsonify(*map(info_serializer, Game.query.all()))
-    # length is 364, but there are 513 games
-
-
+ 
 @app.route('/api/<int:id>')
 def show(id):
     return jsonify(*map(info_serializer, Game.query.filter_by(id=id)))
