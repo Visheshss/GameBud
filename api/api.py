@@ -48,7 +48,6 @@ display_games = 'display games'
 @app.route('/api', methods=['GET', 'POST'])
 def index():
     if session.get(display_games, None) is None:
-        print(jsonify(*map(info_serializer, Game.query.all())))
         return jsonify(*map(info_serializer, Game.query.all()))
     else:
         search_word = session[display_games]
@@ -59,8 +58,7 @@ def index():
             Game.title.like('%'+search_word+'%')).all()
         searched_for_games = list(dict.fromkeys(
             searched_for_games_contains + searched_for_games_equivalent))
-        print(search_word)
-
+  
         return jsonify(*map(info_serializer, searched_for_games))
 
 
@@ -68,8 +66,7 @@ def index():
 def search():
     searched_title = json.loads(request.data)
     session[display_games] = searched_title['content']
-    print(session[display_games])
-    return {'201': 'todo created successfully'}
+    return {'201': 'Success'}
 
 
 @app.route('/api/<int:id>', methods=['POST', 'GET'])
