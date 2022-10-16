@@ -17,7 +17,6 @@ export const Home = () => {
       .then((data) => {
         setGames(data);
         setSearch("");
-        console.log('hello');
       });
   }, []);
 
@@ -36,7 +35,6 @@ export const Home = () => {
     })
       .then((res) => res.json())
       .then((info) => {
-        console.log(info);
         setSearch("");
       });
   };
