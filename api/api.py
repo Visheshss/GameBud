@@ -51,7 +51,7 @@ def index():
         return jsonify(*map(info_serializer, Game.query.all()))
     else:
         search_word = session[display_games]
-        session.pop('display games', None)
+        session.pop(display_games, None)
         searched_for_games_contains = Game.query.filter(
             Game.title.contains(search_word)).all()
         searched_for_games_equivalent = Game.query.filter(
