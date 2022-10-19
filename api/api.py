@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 import requests
 
 app = Flask(__name__)
-app.secret_key = 'SOMETHING-RANDOM'
+app.secret_key = 'key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///example.db'
 db = SQLAlchemy(app)
 
